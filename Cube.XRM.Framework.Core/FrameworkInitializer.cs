@@ -34,13 +34,13 @@ namespace Cube.XRM.Framework.Core
         /// Initializers the specified system setting reader.
         /// </summary>
         /// <param name="SystemSettingReader">The system setting reader.</param>
-        private void Initializer(ISettingReader SystemSettingReader)
+        private void Initializer(ISettingReader SystemSettingReader, string SettingKey)
         {
             ILogger SystemLogger = null;
             IOrganizationService XrmService = null;
             CubeBase SystemBase = null;
 
-            List<SettingGroup> SystemSettingsGroup = SystemSettingReader.Read("XRM");
+            List<SettingGroup> SystemSettingsGroup = SystemSettingReader.Read(SettingKey);
             //load global settings
             if (SystemSettingsGroup != null && SystemSettingsGroup.Count > 0)
             {
@@ -121,7 +121,18 @@ namespace Cube.XRM.Framework.Core
             //if this different than xml you have to change it.
             //if you are using CRM online you must change it to CRMSettingReader
             ISettingReader SystemSettingReader = new XMLSettingReader();
-            Initializer(SystemSettingReader);
+            Initializer(SystemSettingReader, "XRM");
+        }
+
+        public FrameworkInitializer(string SettingKey)
+        {
+            //load first settings group
+            //this is most important point of framework
+            //we are saying to sytem settings location
+            //if this different than xml you have to change it.
+            //if you are using CRM online you must change it to CRMSettingReader
+            ISettingReader SystemSettingReader = new XMLSettingReader();
+            Initializer(SystemSettingReader, SettingKey);
         }
     }
 }
