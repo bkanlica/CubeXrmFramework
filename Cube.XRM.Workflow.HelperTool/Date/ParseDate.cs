@@ -1,5 +1,6 @@
 ﻿using Cube.XRM.Framework;
 using Cube.XRM.Framework.AddOn;
+using Cube.XRM.Workflow.HelperTool.Users;
 using Microsoft.Xrm.Sdk.Workflow;
 using System;
 using System.Activities;
@@ -49,36 +50,36 @@ namespace Cube.XRM.Workflow.HelperTool.Date
 
         protected override void Execute(CubeBase Cube)
         {
-            var executionContext = (ActivityContext)Cube.BaseSystemObject;
+            //var executionContext = (ActivityContext)Cube.BaseSystemObject;
 
-            var dateFormat = pDateFormat.Get<string>(executionContext);
-            DateTime date = pDate.Get<DateTime>(executionContext);
+            //var dateFormat = pDateFormat.Get<string>(executionContext);
+            //DateTime date = pDate.Get<DateTime>(executionContext);
             
 
-            pYear.Set(executionContext, date.Year);
-            pMonth.Set(executionContext, date.Month);
-            pDay.Set(executionContext, date.Day);
-            pHour.Set(executionContext, date.Hour);
+            //pYear.Set(executionContext, date.Year);
+            //pMonth.Set(executionContext, date.Month);
+            //pDay.Set(executionContext, date.Day);
+            //pHour.Set(executionContext, date.Hour);
 
-            var cultureInfo = GetCultureInfo(executionContext, LanguageCode.Get<int>(executionContext));
-            MonthText.Set(executionContext, date.ToString("MMMM", cultureInfo.DateTimeFormat));
-            pDayOfWeekString.Set(executionContext, date.ToString("dddd", cultureInfo.DateTimeFormat));
+            //var cultureInfo = GetCultureInfo(executionContext, LanguageCode.Get<int>(executionContext));
+            //MonthText.Set(executionContext, date.ToString("MMMM", cultureInfo.DateTimeFormat));
+            //pDayOfWeekString.Set(executionContext, date.ToString("dddd", cultureInfo.DateTimeFormat));
 
-            pHour.Set(executionContext, date.Hour);
-            pMinute.Set(executionContext, date.Minute);
+            //pHour.Set(executionContext, date.Hour);
+            //pMinute.Set(executionContext, date.Minute);
 
-            pDayOfWeek.Set(executionContext, (int)date.DayOfWeek);
-            pDayOfYear.Set(executionContext, date.DayOfYear);
-            pWeek.Set(executionContext, GetWeek(date));
+            //pDayOfWeek.Set(executionContext, (int)date.DayOfWeek);
+            //pDayOfYear.Set(executionContext, date.DayOfYear);
+            //pWeek.Set(executionContext, GetWeek(date));
         }
 
-        private static CultureInfo GetCultureInfo(CodeActivityContext executionContext, int languageCode)
-        {
-            if (languageCode > 0) return new CultureInfo(languageCode);
-            var settings = UserSettings.GetUserSettings(executionContext);
-            var uilang = (int)settings["uilanguageid"];
-            return new CultureInfo(uilang);
-        }
+        //private static CultureInfo GetCultureInfo(CodeActivityContext executionContext, int languageCode)
+        //{
+        //    //if (languageCode > 0) return new CultureInfo(languageCode);
+        //    //var settings = UserSettings.GetUserSettings(executionContext);
+        //    //var uilang = (int)settings["uilanguageid"];
+        //    //return new CultureInfo(uilang);
+        //}
 
     }
 }
