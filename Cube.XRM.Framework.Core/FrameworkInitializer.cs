@@ -104,9 +104,6 @@ namespace Cube.XRM.Framework.Core
                 }
 
                 cube = SystemBase;
-                cube.XRMActions.Create(new Entity());
-                cube.RetrieveActions.getItemsFetch("");
-                cube.MetadataRetrieveActions.GetOptionSets("","");
             }
         }
 
