@@ -227,7 +227,7 @@ namespace Cube.XRM.Framework.Core
                 V response = (V)xrmService.Execute(request);
 
                 logSystem.CreateLog(typeof(T).ToString() + " Request successfully executed");
-                return new Result(false, string.Empty, response, logSystem);
+                return new Result(false, string.Empty, logSystem, response);
             }
             catch (Exception ex)
             {

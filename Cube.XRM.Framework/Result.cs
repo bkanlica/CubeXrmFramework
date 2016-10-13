@@ -13,6 +13,7 @@
 // ***********************************************************************
 
 using Cube.XRM.Framework.Interfaces;
+using Microsoft.Xrm.Sdk;
 using System;
 using System.Runtime.Serialization;
 
@@ -56,6 +57,8 @@ namespace Cube.XRM.Framework
         /// <value>The business object array.</value>
         [DataMember]
         public Object[] BusinessObjectArray { get; set; }
+
+        public OrganizationResponse Response { get; set; }
         /// <summary>
         /// Default constractor of Result Class for Object
         /// </summary>
@@ -80,6 +83,25 @@ namespace Cube.XRM.Framework
                     LogSystem.CreateLog(Message, logType);
             }
         }
+
+        public Result(bool _isError, string _Message, IDetailedLog _LogSystem, OrganizationResponse _Response)
+        {
+            Message = _Message;
+            isError = _isError;
+            Response = _Response;
+            LogSystem = _LogSystem;
+
+            if (Message != null && Message != string.Empty)
+            {
+                System.Diagnostics.EventLogEntryType logType = System.Diagnostics.EventLogEntryType.Information;
+                if (isError)
+                    logType = System.Diagnostics.EventLogEntryType.Error;
+
+                if (LogSystem != null)
+                    LogSystem.CreateLog(Message, logType);
+            }
+        }
+
         /// <summary>
         /// Default constractor of Result Class for Array
         /// </summary>

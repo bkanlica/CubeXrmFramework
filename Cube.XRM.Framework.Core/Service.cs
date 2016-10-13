@@ -17,6 +17,7 @@ using Microsoft.Xrm.Client;
 using Microsoft.Xrm.Client.Services;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Client;
+using Microsoft.Xrm.Sdk.Messages;
 using System;
 using System.Reflection;
 using System.ServiceModel.Description;
@@ -71,8 +72,8 @@ namespace Cube.XRM.Framework.Core
             }
             catch (Exception ex)
             {
-                return new Result(true, 
-                    MethodBase.GetCurrentMethod().ToString() + " : " + ExceptionHandler.HandleException(ex), 
+                return new Result(true,
+                    MethodBase.GetCurrentMethod().ToString() + " : " + ExceptionHandler.HandleException(ex),
                     null, logSystem);
             }
         }

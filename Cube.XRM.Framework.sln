@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cube.XRM.Framework", "Cube.XRM.Framework\Cube.XRM.Framework.csproj", "{C91CC283-FFC6-4C67-A3C2-1925BCFF8CC8}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cube.XRM.Framework.Core", "Cube.XRM.Framework.Core\Cube.XRM.Framework.Core.csproj", "{0253CECA-472F-4CE9-8712-11C0D31312BE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cube.XRM.Framework.AddOn", "Cube.XRM.Framework.AddOn\Cube.XRM.Framework.AddOn.csproj", "{7EBFF69F-CBB1-4FF8-B6BD-809B5B8026F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cube.XRM.Workflow.HelperTool", "Cube.XRM.Workflow.HelperTool\Cube.XRM.Workflow.HelperTool.csproj", "{1BF271A9-49C6-4208-80FD-A595B3B1EFD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,26 +35,12 @@ Global
 		{7EBFF69F-CBB1-4FF8-B6BD-809B5B8026F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EBFF69F-CBB1-4FF8-B6BD-809B5B8026F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EBFF69F-CBB1-4FF8-B6BD-809B5B8026F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BF271A9-49C6-4208-80FD-A595B3B1EFD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BF271A9-49C6-4208-80FD-A595B3B1EFD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BF271A9-49C6-4208-80FD-A595B3B1EFD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BF271A9-49C6-4208-80FD-A595B3B1EFD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://mawens.visualstudio.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = Cube.XRM.Framework.AddOn\\Cube.XRM.Framework.AddOn.csproj
-		SccProjectName1 = Cube.XRM.Framework.AddOn
-		SccLocalPath1 = Cube.XRM.Framework.AddOn
-		SccProjectUniqueName2 = Cube.XRM.Framework.Core\\Cube.XRM.Framework.Core.csproj
-		SccProjectName2 = Cube.XRM.Framework.Core
-		SccLocalPath2 = Cube.XRM.Framework.Core
-		SccProjectUniqueName3 = Cube.XRM.Framework.IntegrationTester\\Cube.XRM.Framework.IntegrationTester.csproj
-		SccProjectName3 = Cube.XRM.Framework.IntegrationTester
-		SccLocalPath3 = Cube.XRM.Framework.IntegrationTester
-		SccProjectUniqueName4 = Cube.XRM.Framework\\Cube.XRM.Framework.csproj
-		SccProjectName4 = Cube.XRM.Framework
-		SccLocalPath4 = Cube.XRM.Framework
 	EndGlobalSection
 EndGlobal

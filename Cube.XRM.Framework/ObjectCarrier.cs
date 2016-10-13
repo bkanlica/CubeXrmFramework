@@ -49,12 +49,12 @@ namespace Cube.XRM.Framework.Core
         /// <param name="value">The value.</param>
         public static void SetValue(string key, object value)
         {
-            var item = new Setting()
-            {
-                Value = value
-            };
+            //var item = new Setting()
+            //{
+            //    Value = value
+            //};
 
-            carrierObject.AddOrUpdate(key, item, (oldKey, oldValue) => { return item; });
+            carrierObject.AddOrUpdate(key, value, (oldKey, oldValue) => { return value; });
         }
 
         /// <summary>

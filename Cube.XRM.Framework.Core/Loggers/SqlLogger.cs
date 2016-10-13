@@ -91,11 +91,11 @@ namespace Cube.XRM.Framework.Core.Loggers
                 SqlCommand cmdDatabase = new SqlCommand(strSqlCommand);
                 cmdDatabase.Connection = sqlConnection;
                 cmdDatabase.ExecuteNonQuery();
-                return new Result(false, "", null, null);
+                return new Result(false, "", new SqlLogger(), null);
             }
             catch (Exception ex)
             {
-                return new Result(true, ex.Message, null, null);
+                return new Result(true, ex.Message, new SqlLogger(), null);
             }
             finally
             {

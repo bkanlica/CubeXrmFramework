@@ -99,11 +99,11 @@ namespace Cube.XRM.Framework.Core.Loggers
                 sw.WriteLine(content);
                 sw.Flush();
                 sw.Close();
-                return new Result(false, "", null, null);
+                return new Result(false, "", new TextLogger(), null);
             }
             catch (Exception ex)
             {
-                return new Result(true, ex.Message, null, null);
+                return new Result(true, ex.Message, new TextLogger(), null);
             }
         }
     }
